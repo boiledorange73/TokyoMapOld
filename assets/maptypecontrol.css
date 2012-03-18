@@ -1,0 +1,109 @@
+#mt {
+  font-size: 12.5px;
+  margin: 8px 8px 0 0;
+  padding: 0;
+}
+
+#mt-mount {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+#mt .button, #mt-current {
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  background: #fff;
+  padding: 0.25em 0.75em 0.25em 0.75em;
+  white-space: pre;
+  cursor: pointer;
+}
+
+#mt .button {
+  border-top-color: #ccc;
+  border-right-color: #999;
+  border-bottom-color: #999;
+  border-left-color: #ccc;
+}
+
+#mt .selected {
+  font-weight: bold;
+}
+
+/* -- collapse -- */
+#mt .collapse #mt-current {
+  position: static;
+  display: block;
+}
+
+#mt .collapse #mt-current-content {
+  margin: 0;
+  padding: 0 16px 0 0;
+  background: url(rtri-8x8-10x10.png) no-repeat right center;
+}
+
+#mt .collapse .button {
+  display: none;
+}
+
+/* -- select -- */
+#mt .select #mt-current {
+  position: static;
+  display: block;
+}
+
+#mt .select #mt-current-content {
+  margin: 0;
+  padding: 0 16px 0 0;
+  background: url(tri-8x8-10x10.png) no-repeat right center;
+}
+
+#mt .select .button {
+  position: static;
+  display: block;
+}
+
+#mt .select .button p {
+  text-align: left;
+}
+
+/* -- flow -- */
+
+#mt .flow #mt-current {
+  display: none;
+}
+
+#mt .flow .button {
+  float: left;
+}
+
+#mt .flow .button p {
+  text-align: center;
+}
+
+#mt .button:hover, #mt .button:active, #mt .selected {
+  background: #eee;
+  background: -moz-linear-gradient(top, #fff, #fff 80%, #ccc);
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(0.8, #fff), to(#ccc));
+}
+
+/*
+  #mt-mount要素
+    class
+      flow フロー表示
+      select 選択肢
+      collapse 選択された地図名のみ表示
+  #mt-current
+    width
+      各ボタンの最大値を入れておく
+    イベント
+      onclick : #mt-mountのクラスに応じて collapse - select を切り替え
+  ボタン
+    class
+      button 通常のボタン
+      button selected 選択されたボタン
+    地図変更メソッドで
+      class変更
+      #mt-current-content の文字列変更 createTextNode 必須
+*/

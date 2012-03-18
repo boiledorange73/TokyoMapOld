@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tokyo Map Old</string>
+    <string name="weburl">file:///android_asset/index.html</string>
+    <string name="lc">en</string>
+    <string name="abouturl">file:///android_asset/about_en.html</string>
+
+    <string name="wHighAccuracy">Use high accuracy location sensor</string>
+    <string name="sonHighAccuracy">Only high accuracy sensor is used to find my location.</string>
+    <string name="soffHighAccuracy">All activy sensors are used to find my location.</string>
+    <string name="wMapImageType">Map Image Type (Reflected after restart)</string>
+    <string name="wMapNameSize">Size of map name text</string>
+
+    <string name="mapnamesize_small">Small</string>
+    <string name="mapnamesize_middle">Middle</string>
+    <string name="mapnamesize_large">Large</string>
+    <string name="mapnamesize_extralarge">Extra Large</string>
+    
+</resources>

@@ -1,0 +1,14 @@
+h1 {
+  font-size: 1.2em;
+  font-weight: normal;
+  border: solid 1px #000;
+  border-width: 0 0 1px 0;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: normal;
+  border: dashed 1px #000;
+  border-width: 0 0 1px 0;
+}
+

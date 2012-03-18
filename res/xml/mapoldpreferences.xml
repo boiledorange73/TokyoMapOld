@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:summaryOn="@string/sonHighAccuracy" android:disableDependentsState="false" android:key="HighAccuracy" android:summaryOff="@string/soffHighAccuracy" android:title="@string/wHighAccuracy"></CheckBoxPreference><ListPreference android:key="MapNameSize" android:title="@string/wMapNameSize" android:entries="@array/arr_mapnamesize_labels" android:entryValues="@array/arr_mapnamesize_values" android:defaultValue="_12.5px"/>
+    <ListPreference android:key="MapImageType" android:entryValues="@array/arr_extension_values" android:title="@string/wMapImageType" android:entries="@array/arr_extension_labels"/>
+    
+</PreferenceScreen>
