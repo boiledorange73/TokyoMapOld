@@ -5,7 +5,7 @@ import com.gmail.boiledorange73.ut.map.MapActivityBase;
 
 import android.app.Activity;
 
-public class TokyoMapOldActivity extends MapActivityBase {
+public class MainActivity extends MapActivityBase {
 
     @Override
     protected String getWebUrl() {
@@ -43,6 +43,34 @@ public class TokyoMapOldActivity extends MapActivityBase {
     @Override
     protected Class<? extends Activity> getGeocoderActivityClass() {
         return GeocoderActivity.class;
+    }
+
+    @Override
+    protected String getUserAgentCore() {
+        return this.getString(R.string.useragent);
+    }
+
+    @Override
+    protected boolean hasDownloadedFiles() {
+        return false;
+    }
+
+    @Override
+    protected void removeDownloadedFiles() {
+    }
+
+    @Override
+    protected boolean checkLicenseCode() {
+        return true;
+    }
+
+    @Override
+    protected void updateLicenseCode() {
+    }
+
+    @Override
+    protected String getLicenseUrl() {
+        return null;
     }
 
 }

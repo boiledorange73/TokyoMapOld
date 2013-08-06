@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">東京古い地図</string>
+    <string name="useragent">TokyoMapOld</string>
     <string name="weburl">file:///android_asset/index.html</string>
     <string name="lc">ja</string>
     <string name="abouturl">file:///android_asset/about_ja.html</string>
@@ -9,8 +10,9 @@
     <string name="sonHighAccuracy">現在地の取得に高精度センサのみを使用します。</string>
     <string name="soffHighAccuracy">すべての有効な位置センサを使用します。</string>
     <string name="wMapImageType">地図画像タイプ (再起動後有効)</string>
-    <string name="wMapNameSize">地図名サイズ (再起動後有効)</string>
-
+    <string name="wMapNameSize">地図名サイズ</string>
+    <string name="wClearCache">キャッシュ消去</string>
+    
     <string name="mapnamesize_small">小</string>
     <string name="mapnamesize_middle">中</string>
     <string name="mapnamesize_large">大</string>

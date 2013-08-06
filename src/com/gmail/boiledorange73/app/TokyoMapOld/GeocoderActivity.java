@@ -228,18 +228,18 @@ public class GeocoderActivity extends Activity {
         this.mBtnOk = null;
         this.mBtnCancel = null;
         // progress
-        if( this.mProgressDialog != null ) {
-            if( this.mProgressDialog.isShowing() ) {
+        if (this.mProgressDialog != null) {
+            if (this.mProgressDialog.isShowing()) {
                 this.mProgressDialog.dismiss();
             }
             this.mProgressDialog = null;
         }
         // purges adapters for spinner.
-        if( this.mAdpPref != null ) {
+        if (this.mAdpPref != null) {
             this.mAdpPref.clear();
             this.mAdpPref = null;
         }
-        if( this.mAdpMncpl != null ) {
+        if (this.mAdpMncpl != null) {
             this.mAdpMncpl.clear();
             this.mAdpMncpl = null;
         }
@@ -350,7 +350,7 @@ public class GeocoderActivity extends Activity {
             return;
         }
 
-        if( this.mSimpleWebClient != null ) {
+        if (this.mSimpleWebClient != null) {
             // NOW running for another task.
             this.stopWebClient();
         }
@@ -378,6 +378,7 @@ public class GeocoderActivity extends Activity {
                     }
                 });
             }
+
             @Override
             public void onArrive(final SimpleWebClient client,
                     final String url, final String result) {
@@ -429,7 +430,7 @@ public class GeocoderActivity extends Activity {
     private void onError(SimpleWebClient receiver, String message) {
         AlertDialogHelper.showSimple(this,
                 com.gmail.boiledorange73.ut.map.Messages.getString("W_ERROR"),
-                message, mSpnMncpl);
+                message, android.R.drawable.ic_dialog_alert, mSpnMncpl);
     }
 
     private void onArrive(SimpleWebClient receiver, String result) {
@@ -441,7 +442,7 @@ public class GeocoderActivity extends Activity {
                 AlertDialogHelper.showSimple(this,
                         com.gmail.boiledorange73.ut.map.Messages
                                 .getString("W_ERROR"), root.getString("error"),
-                        null);
+                        android.R.drawable.ic_dialog_alert, null);
                 return;
             }
             JSONObject res = root.getJSONObject("result");

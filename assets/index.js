@@ -28,6 +28,11 @@ com.gmail.boiledorange73.js.sendMessage = function(code, message) {
   if( window.jsBridge ) {
     jsBridge.setMessage(code, message);
   }
+  else {
+    if( code == "alert" ) {
+      alert(message);
+    }
+  }
 };
 // ----------------
 // Queries to Dalvik.
@@ -238,7 +243,7 @@ com.gmail.boiledorange73.map.Map = function(initialCenter, initialZoom, mapTypes
   this.mapTypes = [];
   for( var k in mapTypes ) {
     var mt = new mapTypes[k]();
-    this.mapTypes.push({"id":k, "name":mt.name});
+    this.mapTypes.push({"id":k, "name":mt.name, "maxz": mt.maxZoom});
     this.gmap.mapTypes.set(k, mt);
   }
   this.mapTypes.push({"id":google.maps.MapTypeId.ROADMAP, "name":mapviewer.rs.get("roadmap")});
@@ -293,6 +298,39 @@ com.gmail.boiledorange73.map.Map.prototype.getCurrentMapState = function() {
     com.gmail.boiledorange73.js.sendMessage("getCurrentMapState", "") ;
   }
 };
+
+
+com.gmail.boiledorange73.map.Map.prototype.getCurrentZoomState = function() {
+  var curz = this.gmap.getZoom();
+  var minz = 0;
+  var id = this.gmap.getMapTypeId();
+  // finds maptype
+  var maxz = -1;
+  var maxmaxz = -1;
+  for( var n = 0; n < this.mapTypes.length; n++ ) {
+    if( this.mapTypes[n]["maxz"] ) {
+      if( this.mapTypes[n]["id"] == id ) {
+        maxz = this.mapTypes[n]["maxz"];
+        break;
+      }
+      if( maxmaxz < 0 || this.mapTypes[n]["maxz"] > maxmaxz ) {
+        maxmaxz = this.mapTypes[n]["maxz"];
+      }
+    }
+  }
+
+  if( maxz < 0 ) {
+    if( maxmaxz < 0 ) {
+      // --------------------- default max zoom.
+      maxz = 18;
+    }
+    else {
+      maxz = maxmaxz;
+    }
+  }
+  com.gmail.boiledorange73.js.sendMessage("getCurrentZoomState", "{\"minzoom\": "+minz+", \"maxzoom\": "+maxz+", \"currentzoom\": "+curz+"}");
+};
+
 // ----------------
 // Sets the status of the map.
 //   id - ID of active map. Affects only if id is NON-NULL value.
