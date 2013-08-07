@@ -3,6 +3,7 @@ Tokyo Map Old release note
 0.9.6 - 7th August, 2013
   "Clear Cache" added.
   "Map name text size" preference affects immediately after preference windows is closed.
+  Fixed that menu items are not shown correctly on Android 3.0 or higher.
 
 0.9.5 - 14th May, 2012
   New feature which moves the map to specified prefecture/municipality is implemented.
